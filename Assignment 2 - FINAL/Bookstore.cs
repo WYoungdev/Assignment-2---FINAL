@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Thewordwagon
+namespace Assignment_2___FINAL
 {
-    internal class UserInterface
+    internal class Class1
     {
-
     }
 }
