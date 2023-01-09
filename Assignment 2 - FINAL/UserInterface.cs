@@ -54,6 +54,9 @@ namespace Thewordwagon
 
                 Console.WriteLine("How many days will the item be borrowed for?");
                 int itemduration = Convert.ToInt32(Console.ReadLine());
+
+                Loan loan = new Loan(Existingloan, type, itemdate, itemtime, itemduration);
+                Console.WriteLine("New loan has been successfully created.");
             }
             else
             {
