@@ -36,10 +36,14 @@ namespace Thewordwagon
             Console.Clear();
             Console.WriteLine("Create new loan:");
             Console.WriteLine("-------------------------------------------------------------");
-            Console.WriteLine("                                                             ");
             Console.WriteLine("What is the name of the customer? Please note that a customer may only borrow one item at a time.");
             string customername = Console.ReadLine();
             Customers? Existingloan = bookstore.GetLoan(customername); //Create class for this
+
+            switch (manage)
+            {
+                case "Create new loan"
+            }
 
             if (Existingloan != null)
             {
@@ -66,6 +70,8 @@ namespace Thewordwagon
             Console.ReadLine();
             MainMenu();
             break;
+
+            
         }
     }
 }
