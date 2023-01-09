@@ -40,11 +40,6 @@ namespace Thewordwagon
             string customername = Console.ReadLine();
             Customers? Existingloan = bookstore.GetLoan(customername); //Create class for this
 
-            switch (manage)
-            {
-                case "Create new loan"
-            }
-
             if (Existingloan != null)
             {
                 Console.WriteLine("What type of item is the customer borrowing?");
@@ -69,9 +64,26 @@ namespace Thewordwagon
             Console.WriteLine("Please press any key to return to the main menu.");
             Console.ReadLine();
             MainMenu();
-            break;
+        }
 
-            
+        public static void Managepreexistingloans()
+        {
+            Console.Clear();
+            Console.WriteLine("Manage pre-existing loans");
+            Console.WriteLine("-------------------------------------------------------------");
+
+            string manage = Prompt.Select("Please select an option below", new[] { "View outstanding loans", "Delete loan" });
+
+            switch (manage)
+            {
+                case "View outstanding loans":
+                    MainMenu();
+                    break;
+
+                case "Delete loan":
+                    MainMenu();
+                    break;
+            }
         }
     }
 }
