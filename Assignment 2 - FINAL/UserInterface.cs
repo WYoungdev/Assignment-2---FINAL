@@ -77,10 +77,20 @@ namespace Thewordwagon
             switch (manage)
             {
                 case "View outstanding loans":
+                    Console.Clear();
+                    foreach (var item in bookstore.outstandingloans)
+                    {
+                        Console.WriteLine(item);
+                        Console.WriteLine("-------------------------------------------------------------");
+                    }
+                    Console.WriteLine("Press any key to return to the main menu.");
+                    Console.ReadLine();
                     MainMenu();
                     break;
 
                 case "Delete loan":
+                    Console.WriteLine("Press any key to return to the main menu.");
+                    Console.ReadLine();
                     MainMenu();
                     break;
             }
