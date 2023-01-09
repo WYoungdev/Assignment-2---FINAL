@@ -14,7 +14,7 @@ namespace Thewordwagon
         {
             Console.Clear(); //Here, the console is cleared and the store name is printed in a format that is easy to view.
             Console.WriteLine("Welcome to the { bookstore.Name }!");
-            Console.WriteLine("--------------------------------");
+            Console.WriteLine("-------------------------------------------------------------");
 
             string manage = Prompt.Select("Please select an option below", new[] { "Create new loan", "Manage preexisting loan" });
 
@@ -29,6 +29,16 @@ namespace Thewordwagon
                 default:
                     break;
             }
+        }
+
+        private static void Createnewloan()
+        {
+            Console.Clear();
+            Console.WriteLine("Create new loan:");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("                                                             ");
+            Console.WriteLine("What is the name of the customer?");
+            string customername = Console.ReadLine();
         }
     }
 }
