@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Thewordwagon
 {
-    internal class Bookstore
+    internal class Customers
     {
 
     }

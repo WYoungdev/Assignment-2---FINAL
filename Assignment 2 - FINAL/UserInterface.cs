@@ -13,7 +13,7 @@ namespace Thewordwagon
         public static void MainMenu()
         {
             Console.Clear(); //Here, the console is cleared and the store name is printed in a format that is easy to view.
-            Console.WriteLine("Welcome to the { bookstore.Name }!");
+            Console.WriteLine("Welcome to the The Word Wagon!");
             Console.WriteLine("-------------------------------------------------------------");
 
             string manage = Prompt.Select("Please select an option below", new[] { "Create new loan", "Manage preexisting loan" }); //Need to make prompt later
@@ -24,7 +24,7 @@ namespace Thewordwagon
                     Createnewloan();
                     break;
                 case "Manage preexisting loan":
-                    Managepreexistingloan();
+                    Managepreexistingloans();
                     break;
                 default:
                     break;
@@ -38,9 +38,9 @@ namespace Thewordwagon
             Console.WriteLine("-------------------------------------------------------------");
             Console.WriteLine("What is the name of the customer? Please note that a customer may only borrow one item at a time.");
             string customername = Console.ReadLine();
-            Customers? Existingloan = bookstore.GetLoan(customername); //Create class for this
+            Customers? Existingloan = bookstore.GetLoan(customername); //Create a class for this
 
-            if (Existingloan != null)
+            if (Existingloan != null) //Checking Existingloan for if the loan already exist. If it does not, Attributes are then added to it.
             {
                 Console.WriteLine("What type of item is the customer borrowing?");
                 string type = Console.ReadLine();
@@ -53,6 +53,8 @@ namespace Thewordwagon
 
                 Console.WriteLine("How many days will the item be borrowed for?");
                 int itemduration = Convert.ToInt32(Console.ReadLine());
+
+                Guid id = Guid.NewGuid(); //This line creates a new unique GUID for every new loan created.
 
                 Loan loan = new Loan(Existingloan, type, itemdate, itemtime, itemduration);
                 Console.WriteLine("New loan has been successfully created.");
@@ -89,6 +91,19 @@ namespace Thewordwagon
                     break;
 
                 case "Delete loan":
+                    Console.Clear();
+                    string customername = Prompt.Input<int>("Please enter a customer name:");
+                    Loan? current = bookstore.GetLoan(customername); //Is this going to work?
+
+                    if (current != null)
+                    {
+                        bookstore.GetLoan.Remove(current);
+                        Console.WriteLine("Loan has been deleted.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Loan not found. Was the customer name correct?");
+                    }
                     Console.WriteLine("Press any key to return to the main menu.");
                     Console.ReadLine();
                     MainMenu();
