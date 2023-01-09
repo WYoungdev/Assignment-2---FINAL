@@ -45,7 +45,15 @@ namespace Thewordwagon
             {
                 Console.WriteLine("What type of item is the customer borrowing?");
                 string type = Console.ReadLine();
-                Console.WriteLine("")
+
+                Console.WriteLine("What is the date that this item will be taken out on? E.g 24-2-22");
+                string itemdate = Console.ReadLine();
+
+                Console.WriteLine("What time will the item taken out at? E.g 12:45pm");
+                string itemtime = Console.ReadLine();
+
+                Console.WriteLine("How many days will the item be borrowed for?");
+                int itemduration = Convert.ToInt32(Console.ReadLine());
             }
         }
     }
