@@ -55,6 +55,14 @@ namespace Thewordwagon
                 Console.WriteLine("How many days will the item be borrowed for?");
                 int itemduration = Convert.ToInt32(Console.ReadLine());
             }
+            else
+            {
+                Console.WriteLine("Customer has already borrowed an item and cannot borrow another.");
+            }
+            Console.WriteLine("Please press any key to return to the main menu.");
+            Console.ReadLine();
+            MainMenu();
+            break;
         }
     }
 }
