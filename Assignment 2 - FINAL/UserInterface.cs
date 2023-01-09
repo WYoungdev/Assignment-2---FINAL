@@ -16,7 +16,7 @@ namespace Thewordwagon
             Console.WriteLine("Welcome to the { bookstore.Name }!");
             Console.WriteLine("-------------------------------------------------------------");
 
-            string manage = Prompt.Select("Please select an option below", new[] { "Create new loan", "Manage preexisting loan" });
+            string manage = Prompt.Select("Please select an option below", new[] { "Create new loan", "Manage preexisting loan" }); //Need to make prompt later
 
             switch (manage)
             {
@@ -37,8 +37,16 @@ namespace Thewordwagon
             Console.WriteLine("Create new loan:");
             Console.WriteLine("-------------------------------------------------------------");
             Console.WriteLine("                                                             ");
-            Console.WriteLine("What is the name of the customer?");
+            Console.WriteLine("What is the name of the customer? Please note that a customer may only borrow one item at a time.");
             string customername = Console.ReadLine();
+            Customers? Existingloan = bookstore.GetLoan(customername); //Create class for this
+
+            if (Existingloan != null)
+            {
+                Console.WriteLine("What type of item is the customer borrowing?");
+                string type = Console.ReadLine();
+                Console.WriteLine("")
+            }
         }
     }
 }
