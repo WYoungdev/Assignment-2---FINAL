@@ -8,22 +8,14 @@ namespace Thewordwagon
 {
     internal class Loan
     {
-        int loandate;
-        int loantime;
-        int loanduration;
-        Guid loanID;
         public User LoanOwner { get; set; }
         public Item LoanItem { get; set; }
+        public DateTime LoanDate { get; set; }
 
-        public Loan(User LoanOwner, Item LoanItem) { 
+        public Loan(User LoanOwner, Item LoanItem, DateTime LoanDate) { 
             this.LoanItem= LoanItem;
             this.LoanOwner = LoanOwner;
-            //Is the section below correct ??
-            this.loandate = loandate;
-            this.loantime = loantime;
-            this.loanduration = loanduration;
-            this.loanID = loanID;
-
+            this.LoanDate = LoanDate;
         }
     }
 }
