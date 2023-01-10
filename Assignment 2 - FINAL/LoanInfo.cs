@@ -6,24 +6,19 @@ using System.Threading.Tasks;
 
 namespace Thewordwagon
 {
-    internal class Loan
+    internal class LoanInfo
     {
         int loandate;
         int loantime;
         int loanduration;
         Guid loanID;
-        public User LoanOwner { get; set; }
-        public Item LoanItem { get; set; }
 
-        public Loan(User LoanOwner, Item LoanItem) { 
-            this.LoanItem= LoanItem;
-            this.LoanOwner = LoanOwner;
-            //Is the section below correct ??
+        public LoanInfo(int loandate, int loantime, int loanduration, Guid loanID)
+        {
             this.loandate = loandate;
             this.loantime = loantime;
             this.loanduration = loanduration;
             this.loanID = loanID;
-
-        }
+        }   
     }
 }
