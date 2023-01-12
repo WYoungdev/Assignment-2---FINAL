@@ -9,5 +9,7 @@ namespace Thewordwagon
     static class Library
     {
         public static List<Loan> CurrentLoanList = new List<Loan>();
+        public static List<User> CurrentUserList = new List<User>();
+        public static List<Item> CurrentItemList = new List<Item>();
     }
 }

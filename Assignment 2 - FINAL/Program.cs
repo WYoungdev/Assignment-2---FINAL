@@ -15,7 +15,7 @@ namespace Thewordwagon
             Console.Clear();
             Console.WriteLine("Welcome to The Word Wagon!");
             Console.WriteLine("-----------------------------------------------------");
-            string manage = Prompt.Select("Please select an option"), new[] { "Create a new loan", "Print all preexisting loans", "Delete a loan"});
+            string manage = Prompt.Select("Please select an option"), new[] { "Create a new loan", "Print all preexisting loans", "Delete a loan" });
 
             switch (manage)
             {
@@ -35,6 +35,8 @@ namespace Thewordwagon
             //and the item class for the item info to complete the loan.
             Loan myLoan = new Loan(new User("Will", 07913902170, "willyoungslk@gmail.com"), new Item("Avatar", "DVD"), DateTime.Now, 30, DateTime.DueDate); //Need to figure out duedate syntax
             Library.CurrentLoanList.Add(myLoan);
+        }
+
         }
 
         public static void PrintCurrentLoans() //Finish in a bit.
