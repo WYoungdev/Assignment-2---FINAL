@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 
 namespace Thewordwagon
 {
-    static class Library
+    class Library
     {
-        public static List<Loan> CurrentLoanList = new List<Loan>();
-        public static List<User> CurrentUserList = new List<User>();
-        public static List<Item> CurrentItemList = new List<Item>();
+        public List<Loan> CurrentLoanList;
+        public List<User> CurrentUserList;
+        public List<Item> CurrentItemList;
+
+        public string LibraryName { get; set; }
+
+        public Library(string LibraryName)
+        {
+            this.LibraryName = LibraryName;
+            this.CurrentLoanList = new List<Loan>();
+            this.CurrentUserList = new List<User>();
+            this.CurrentItemList = new List<Item>();
+
+        }
     }
 }

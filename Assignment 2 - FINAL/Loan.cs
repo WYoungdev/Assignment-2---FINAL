@@ -11,19 +11,28 @@ namespace Thewordwagon
         public User LoanOwner { get; set; }
         public Item LoanItem { get; set; }
         public DateTime LoanDate { get; set; }
-        public int LoanDuration { get; set; }
-        public DateTime DueDate { get; set; }
+        public DateTime LoanDuration { get; set; }
+
         public Guid LoanID { get; set; }
 
 
-        public Loan(User LoanOwner, Item LoanItem, DateTime LoanDate, int LoanDuration, DateTime DueDate) //This defines the format in which the user should input Loan attributes.
+        public Loan(User LoanOwner, Item LoanItem, int loanDuration) //This defines the format in which the user should input Loan attributes.
         {
-            this.LoanItem= LoanItem;
+            this.LoanItem = LoanItem;
             this.LoanOwner = LoanOwner;
-            this.LoanDate = LoanDate;
-            this.LoanDuration = LoanDuration;
-            this.DueDate = this.LoanDate.AddDays(LoanDuration);
+            this.LoanDate = DateTime.Now;
+            this.LoanDuration = this.LoanDate.AddDays(loanDuration);
             this.LoanID = Guid.NewGuid();
+        }
+        public override string ToString()//Display all the loan details like  User / Item / Todays date / Loan Duration
+        {
+            return
+                    $"\n=============================================" +
+                    $"\nThis are the details of the customer:{LoanOwner} " +
+                    $"\nThis it the item details: {LoanItem}" +
+                    $"\nThis is the todays date:{LoanDate}" +
+                    $"\nThis is the loan duration:{LoanDuration}" +
+                    $"\n=============================================";
         }
     }
 }
