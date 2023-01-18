@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Thewordwagon
 {
     internal class Loan
-    { //Below, attributes are established for the Loan class. The user will input these attributes in the main format.
+    { //Below, attributes are established for the Loan class. The user will input these attributes in the main program.
         public User LoanOwner { get; set; }
         public Item LoanItem { get; set; }
         public DateTime LoanDate { get; set; }
@@ -16,15 +16,15 @@ namespace Thewordwagon
         public Guid LoanID { get; set; }
 
 
-        public Loan(User LoanOwner, Item LoanItem, int loanDuration) //This defines the format in which the user should input Loan attributes.
+        public Loan(User LoanOwner, Item LoanItem, int loanDuration) //Here, LoanOwner, LoanItem and LoanDuration objects are added to the Loan.
         {
-            this.LoanItem = LoanItem;
+            this.LoanItem = LoanItem; //Here, the individual variables are created ready for data to be stored in them.
             this.LoanOwner = LoanOwner;
             this.LoanDate = DateTime.Now;
             this.LoanDuration = this.LoanDate.AddDays(loanDuration);
             this.LoanID = Guid.NewGuid();
         }
-        public override string ToString()//Display all the loan details like  User / Item / Todays date / Loan Duration
+        public override string ToString() //Display all of the loan details when the user has finished inputting them.
         {
             return
                     $"\n=============================================" +

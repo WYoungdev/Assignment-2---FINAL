@@ -9,17 +9,17 @@ namespace Thewordwagon
 {
     internal class Item
     //Here, an Item class has been created to specify information regarding the item that is added to the loan.
-    //This class is used alongside the User in the creation of a Loan. It is associated with the Loan class.
+    //This class is used alongside the User in the creation of a Loan.
     {
-        string name;
+        string name; //Here, attributes are set out based on what information is required to identify the item.
         string itemType;
 
-        public Item(string name, string itemType)
+        public Item(string name, string itemType) //Here, the attributes set out above are actually created.
         {
             this.name = name;
             this.itemType = itemType;
         }
-        public override string ToString()
+        public override string ToString() //This prints the information regarding the Item that the User created.
         {
             return 
                 $"\n===============================================" +

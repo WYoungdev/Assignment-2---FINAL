@@ -9,13 +9,13 @@ namespace Thewordwagon
     class Library //The Library class is responsible for storing every
                   //user input in respective lists for later recalling.
     {
-        public List<Loan> CurrentLoanList; //Here, lists are created for each of the Classes in the program
+        public List<Loan> CurrentLoanList; //Here, lists are set out for each of the Classes in the program
         public List<User> CurrentUserList; //excluding the CLI, so that the objects of each class can be stored.
         public List<Item> CurrentItemList;
 
         public string LibraryName { get; set; }
 
-        public Library(string LibraryName)
+        public Library(string LibraryName) //Here, the lists themselves are actually created for the program to use.
         {
             this.LibraryName = LibraryName;
             this.CurrentLoanList = new List<Loan>();
