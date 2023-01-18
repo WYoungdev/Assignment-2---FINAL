@@ -90,7 +90,7 @@ namespace Thewordwagon
             MainMenu();//Return to the Main Menu.
 
         }
-        public static void View_All_Loans()
+        public static void View_All_Loans() //A method to present the user with all loans in the system/stored in the Library class.
         {
 
             Console.Clear();
@@ -98,16 +98,18 @@ namespace Thewordwagon
 
             foreach (var Loan in library.CurrentLoanList)
             {
-                Console.WriteLine(Loan);
+                Console.WriteLine(Loan); //This function prints every loan stored in the CurrentLoanList held
+                                         //within the Library class.
             }
 
-            Console.WriteLine("\nPress Enter key to return to main menu!");//Press any key
-            Console.ReadLine();//Read the input
-            MainMenu();//Return to Main menu
+            Console.WriteLine("\nPress Enter key to return to main menu!");
+            Console.ReadLine();//Here, the user is prompted to input any data. Any
+                               //input will be read, and the MainMenu method will run, displaying the main menu.
+            MainMenu();
 
 
         }
-        public static void Delete_Loan() //Finish this
+        public static void Delete_Loan() //Finish this.
         {
 
         }

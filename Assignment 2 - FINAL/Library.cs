@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Thewordwagon
 {
-    class Library
+    class Library //The Library class is responsible for storing every
+                  //user input in respective lists for later recalling.
     {
-        public List<Loan> CurrentLoanList;
-        public List<User> CurrentUserList;
+        public List<Loan> CurrentLoanList; //Here, lists are created for each of the Classes in the program
+        public List<User> CurrentUserList; //excluding the CLI, so that the objects of each class can be stored.
         public List<Item> CurrentItemList;
 
         public string LibraryName { get; set; }
