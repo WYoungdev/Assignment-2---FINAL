@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Thewordwagon
 {
-    internal class Loan
+    internal class Loan //Here, a Loan class has been created to hold objects from the User and Item classes.
     { //Below, attributes are established for the Loan class. The user will input these attributes in the main program.
         public User LoanOwner { get; set; }
         public Item LoanItem { get; set; }
