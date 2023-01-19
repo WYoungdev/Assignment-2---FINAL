@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Thewordwagon
 {
     internal class CLI
-        //Below, the main program with CLI are written, which call all classes and
-        //process user inputs. It is accompanied by a CLI for user friendliness.
+    //Below, the main program with CLI are written, which call all classes and
+    //process user inputs. It is accompanied by a CLI for user friendliness.
     {
 
         static Library library = new Library("Library"); //A new Library object is created from the Library class
@@ -46,7 +46,7 @@ namespace Thewordwagon
 
         }
         public static void Create_New_Loan() //A method to create a new loan.
-            
+
         {
             Console.Clear(); //Console is cleared and a new heading is shown for creating a new loan.
             Console.WriteLine("-----------------------------------------------");
@@ -109,9 +109,31 @@ namespace Thewordwagon
 
 
         }
-        public static void Delete_Loan() //Finish this.
+        public static void Delete_Loan() //Here, a method is created to delete a loan.
         {
+            Console.Clear();
+            Console.WriteLine("This is where you can remove an loan!");
 
+            string User_Name = Prompt.Input<string>("Enter the name of the user"); //The user is prompted for the name associated with a loan.
+
+            Loan? Remove_Loan = library.GetLoan(library.GetUser(User_Name)); //The GetUser and GetLoan methods from the Library class are run to
+                                                                             //find if there is a loan associated to the name that the user entered.
+
+            if (Remove_Loan != null)
+            {
+                library.CurrentLoanList.Remove(Remove_Loan); //If there is a loan found, the .Remove function deletes it.
+                Console.WriteLine("The Loan was deleted.");
+
+            }
+            else
+            {
+                Console.WriteLine("This loan was not found!"); //If theere was not a loan found, an error message is displayed.
+            }
+
+            Console.WriteLine("\nPress Enter key to return to main menu!");
+            Console.ReadLine();//Here, the user is prompted to input any data. Any
+                               //input will be read, and the MainMenu method will run, displaying the main menu.
+            MainMenu();
         }
     }
 }

@@ -10,9 +10,11 @@ namespace Thewordwagon
     //Here, a User class has been created to specify the information relating to the user.
     //This class is called in the main program when new loans are created, as loans are inherited from the User.
     {
-        string name; //The User class is configured with attributes that can later be created.
-        string phonenumber;
-        string emailaddress;
+        public string name; //The User class is configured with attributes that can later be created.
+        public string phonenumber;
+        public string emailaddress;
+
+
 
         public User(string name, string phonenumber, string emailaddress) //Here, variables are actually created based on the attributes above,
                                                                           //to store information about the user.
