@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 using Thewordwagon;
 using Sharprompt;
 
-namespace Thewordwagon
+namespace Thewordwagon; //This is the main program. It's purpose is to run the main argument of the program.
+
+internal class Program
 {
-    internal class Program
+
+    static void Main(string[] args)
     {
+        CLI.MainMenu();
 
-        static void Main(string[] args)
-        {
-            CLI.MainMenu();
-
-        }
     }
 }
